@@ -1,0 +1,4 @@
+<Context path="/Chessers">
+	<Logger className="org.apache.catalina.logger.FileLogger"
+		prefix="UserManager" suffix=".log" timestamp="true"/>
+</Context>

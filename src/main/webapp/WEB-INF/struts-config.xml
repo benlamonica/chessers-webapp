@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="createGameForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="username" type="java.lang.String" size="64" initial=""/>
+			<form-property name="color" type="java.lang.Integer" initial="0"/>
+		</form-bean>
+
+		<form-bean name="joinGameForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="username" type="java.lang.String" size="64" initial=""/>
+			<form-property name="gameId" type="java.lang.Integer"/>
+		</form-bean>
+
+		<form-bean name="refreshGameForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="updateOnly" type="java.lang.String" initial="no"/>
+		</form-bean>
+
+		<form-bean name="makeMoveForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="from" type="java.lang.String" size="2"/>
+			<form-property name="to" type="java.lang.String" size="2"/>
+			<form-property name="skipTurn" type="java.lang.String" initial="false"/>
+		</form-bean>
+
+		<form-bean name="getInfoForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="position" type="java.lang.String" size="2"/>
+		</form-bean>
+	</form-beans>
+
+    <global-forwards>
+        <forward name="welcome" path="/Chessers.do"/>
+    </global-forwards>
+
+    <action-mappings>
+		<action path="/Chessers" type="us.pojo.chessers.action.Chessers">
+			<forward name="success" path="/WEB-INF/jsp/index.jsp"/>
+		</action>
+		<action path="/CreateGame" type="us.pojo.chessers.action.CreateGame" name="createGameForm">
+			<forward name="success" path="/RefreshGame.do?updateOnly=no" redirect="true"/>
+		</action>
+		<action path="/JoinGame" type="us.pojo.chessers.action.JoinGame" name="joinGameForm">
+			<forward name="success" path="/RefreshGame.do?updateOnly=no" redirect="true"/>
+		</action>
+		<action path="/MakeMove" type="us.pojo.chessers.action.MakeMove" name="makeMoveForm">
+			<forward name="success" path="/WEB-INF/jsp/make-move.jsp"/>
+		</action>
+		<action path="/RefreshGame" type="us.pojo.chessers.action.RefreshGame" name="refreshGameForm">
+			<forward name="redraw" path="/WEB-INF/jsp/board.jsp"/>
+			<forward name="update" path="/WEB-INF/jsp/update.jsp"/>
+		</action>
+		<action path="/GetMoves" type="us.pojo.chessers.action.GetMoves" name="getInfoForm">
+			<forward name="success" path="/WEB-INF/jsp/get-moves.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>
+

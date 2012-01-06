@@ -1,0 +1,7 @@
+Copyright 2006, Ben La Monica
+
+I have made this source code available for teaching purposes.  You may look at 
+it, use snippets, and run it, but you may not repackage it or rebrand it for 
+your own profit or use.
+
+ben.lamonica__.AT.__gmail.com

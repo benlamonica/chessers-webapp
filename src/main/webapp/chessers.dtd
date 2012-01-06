@@ -1,0 +1,39 @@
+<!ENTITY % color "(white|black)">
+<!ENTITY % position "CDATA">
+<!ENTITY % name "CDATA">
+<!ENTITY % pieceCount "CDATA">
+<!ENTITY % turnsTaken "CDATA">
+<!ENTITY % currentTurn "CDATA">
+<!ENTITY % ignored CDATA
+
+<!ELEMENT chessers-update (players, turn, pieces)>
+<!ELEMENT players (white,black)>
+<!ELEMENT white (%ignored)>
+<!ATTLIST white name %name #REQUIRED>
+<!ATTLIST white pieceCount %pieceCount #REQUIRED>
+
+<!ELEMENT black (%ignored)>
+<!ATTLIST black name %name #REQUIRED>
+<!ATTLIST black pieceCount %pieceCount #REQUIRED>
+
+<!ELEMENT turn (%ignored)>
+<!ATTLIST turn turnsTaken %turnsTaken #REQUIRED>
+<!ATTLIST turn currentTurn %currentTurn #REQUIRED>
+
+<!ELEMENT pieces (King*, Circle*, Square*, Triangle*)>
+<!ELEMENT King (%ignored)>
+<!ATTLIST King color %color #REQUIRED>
+<!ATTLIST King position %position #REQUIRED>
+
+<!ELEMENT Circle (%ignored)>
+<!ATTLIST Circle color %color #REQUIRED>
+<!ATTLIST Circle position %position #REQUIRED>
+
+<!ELEMENT Triangle (%ignored)>
+<!ATTLIST Triangle color %color #REQUIRED>
+<!ATTLIST Triangle position %position #REQUIRED>
+
+<!ELEMENT Square (%ignored)>
+<!ATTLIST Square color %color #REQUIRED>
+<!ATTLIST Square position %position #REQUIRED>
+          

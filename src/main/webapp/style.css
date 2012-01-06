@@ -1,0 +1,80 @@
+.g {
+	background: #005500;
+	width: 50px;
+	height: 50px;
+}
+
+.gs {
+	background: #E78012;
+	width: 50px;
+	height: 50px;
+}
+
+.w {
+	background: #FFFFFF;
+	width: 50px;
+	height: 50px;
+}
+
+.ws {
+	background: #E78012;
+	width: 50px;
+	height: 50px;
+}
+
+.highlight {
+	background: yellow;
+	width: 50px;
+	height: 50px;
+}
+
+.board {
+	border: 1px solid #005500;
+}
+
+.board td {
+	border: 1px solid #005500;
+	text-align: center;
+	cursor: pointer;
+}
+
+.black {
+	background: black;
+	color: white;
+	font-weight: bold;
+}
+
+.black td {
+	border-right: 1px solid white;
+}
+
+.white {
+	background: white;
+	color: black;
+	font-weight: bold;
+}
+
+.white td {
+	border-right: 1px solid black;
+}
+
+.u {
+	border-bottom: 1px solid black;
+}
+
+#currentUser {
+	font-size: x-large;
+	font-weight: bold;
+}
+
+#checkWarning {
+	font-size: x-large;
+	font-weight: bold;
+	color: red;
+}
+
+#gameOverMessage {
+	font-size: x-large;
+	font-weight: bold;
+	color: #005500;
+}
